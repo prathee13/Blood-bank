@@ -21,7 +21,33 @@ char * ret_bog()          //To return the value
     { return bgp; } 
 char * ret_name()         //To return the name 
 { return name; }
- }
+ };
+
+ifstream in;
+ofstream out;
+Donor D;                                                                                 //Object of class Donor
+char ch;
+
+
+void Donor::read()
+{
+  textcolor(5);
+  cprintf("Enter name       : ");
+  gets(name);
+  cout<<" \n ";
+  cprintf(" Enter gender    : ");
+  gets(gender);
+  cout<<" \n ";
+  cprintf(" Enter address     : ");
+  gets(address);
+  cout<<" \n ";
+  cprintf(" Enter phone no.   : ");
+  cin>>phno;
+  cout<<" \n ";
+  cprintf(" Enter blood group : ");
+  gets(bgp);
+  cout<<" \n "
+}
 
 
 void Donor::display() { 
@@ -70,7 +96,7 @@ void add()    /* As we are storing all enteries in a single file, every 2nd reco
 out.close(); 
 }
 
-void search()      //Searching for a donor’s details
+void search()      //Searching for a donorâ€™s details
 { 
   char b[7]; 
   int flag=-1; 
@@ -148,8 +174,6 @@ while(in.read((char*)&D,sizeof(Donor)))
        D.display(); 
 in.close(); 
 }
-
-
 
 void facts() {    //Random facts which could be displayed to get the effect of a blood bank.
 textcolor(27+BLINK); 
